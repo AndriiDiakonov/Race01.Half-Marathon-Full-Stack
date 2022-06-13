@@ -1,0 +1,16 @@
+@media screen and (min-width: 1400px) {
+    video {
+        height: 100%;
+    }
+  }
+  @media screen and (min-width: 1600px) {
+    video {
+        height: 100%;
+    }
+  }
+  @media screen and (min-width: 1900px) {
+    video {
+        width: 100%;
+        height: auto;
+    }
+}

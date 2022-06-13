@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+}
+
+video {
+    height: 100%;
+}
+
+.vid, .vid-404, .vid-reg {
+    opacity: 0;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../assets/auth/poster.jpg);
+    background-size: cover;
+    animation: ani 1.9s forwards;
+}
+
+.vid, .vid-404:after {
+    opacity: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: ani 3.5s forwards;
+}
+
+.vid-404::after {
+    background-color: rgba(98, 9, 9, 0.675);
+}
+
+.vid-reg:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.082);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.vid-reg::after {
+    background-color: rgba(0, 0, 0, 0.675);
+}
+
+
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.vid__title {
+    margin: 0;
+    font-size: 105px;
+    color: #fff;
+    text-align: center;
+}
+
+.vid__p {
+    margin: 0;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+}
+
+.vid__404 {
+    transform: scale(1.5);
+}
+
+.video__media, .video_404 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
