@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="t03. Bring them together">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Profile</h1>
+        <div id="perm"></div>
+        <div id="name"></div>
+        <div id="email"></div>
+        <button id="logOutBtn" type="submit">Log out</button>
+    </div>
+    <a href="/reminder">Reminder</a>
+
+    <script>
+        async function getUserData() {
+            let res = await fetch("/profile/getUserData", {
+                method: 'GET',
+            });
+
+            let data = await res.json();
+
+            return data;
+        }
+
+        async function showUserData() {
+            let res = await getUserData();
+
+            let name = document.querySelector('#name');
+            let perm = document.querySelector('#perm');
+            let email = document.querySelector('#email');
+
+            name.textContent = `User name: ${res.name}`;
+            perm.textContent = `Permissions: ${res.permission}`;
+            email.textContent = `Email: ${res.email}`;
+        }
+
+        async function logOut() {
+            let res = await fetch("/profile/logout", {
+                method: 'GET',
+            });
+
+            let data = await res.json();
+
+            return data;
+        }
+
+        window.addEventListener('load', () => {
+            let logOutBtn = document.querySelector('#logOutBtn');
+    
+            logOutBtn.addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                let res = await logOut();
+
+                if (res.hasOwnProperty('redirect')) {
+                    window.location.href = res.redirect;
+                }
+            })
+            showUserData();
+        })
+    </script>
+</body>
+
+</html>

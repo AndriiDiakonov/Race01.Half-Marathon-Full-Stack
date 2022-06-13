@@ -32,5 +32,6 @@ export async function sendUserData(userData, url) {
     });
 
     let data = await res.json();
+
     return data;
 }

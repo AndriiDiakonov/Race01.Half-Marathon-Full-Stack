@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Race01. Registration">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/form.css">
+    <link rel="stylesheet" href="../style/media.css">
+    <link rel="stylesheet" href="../style/preloader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="preloader" class="visible"></div>
+    <div class="vid-reg">
+        <div class="video">
+              <video preload="auto" class="vid__reg" autoplay playsinline muted loop>
+                <source src="https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1UtBUdmtDv5GKAnH3jvVCc7YnrfJDN5Q0" type="video/webm">
+                <source src="https://drive.google.com/uc?export=download&confirm=no_antivirus&id=19o2aQDI-YYLJ2YX4jcrvYJD5PKv9nq-f" type="video/mp4">
+              </video>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container signup-form">
+                <div class="forms">
+                    <!-- Registration Form -->
+                    <div class="form signup">
+                        <span class="title text-register">Registration</span>
+                        <form id="form" action="#">
+                            <div class="input-field">
+                                <input name="name" type="text" placeholder="Name" required>
+                                <i class="uil uil-user"></i>
+                            </div>
+                            <div class="input-field">
+                                <input name="login" type="text" placeholder="Login" required>
+                                <i class="uil uil-users-alt icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input name="email" type="email" placeholder="Email" id="email" required>
+                                <i class="uil uil-envelope icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input name="password" type="password" class="password" placeholder="Password" id="password"required>
+                                <i class="uil uil-lock icon"></i>
+                            </div>
+                            <div class="input-field">
+                                <input name="repassword" type="password" class="password" placeholder="Repeat password" id="repassword" required>
+                                <i class="uil uil-lock icon"></i>
+                                <i class="uil uil-eye-slash showHidePw"></i>
+                            </div>
+                            <div class="notify form-item"></div>
+                            <div class="input-field button">
+                                <input class="btn form-submit-btn" type="submit" value="Register">
+                            </div>
+                        </form>
+                
+                        <div class="login-signup">
+                            <span class="text">Not a member?
+                                <a href="/login" class="text login-link">Signup now</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="../scripts/preloader.js"></script>
+<script src="../scripts/register.js" type="module"></script>
+<script src="../scripts/form.js"></script>
+</html>
