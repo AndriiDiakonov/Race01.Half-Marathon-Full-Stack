@@ -4,8 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.use(express.static(`${process.cwd()}/game/style`));
-router.use(express.static(`${process.cwd()}/game/scripts`));
-
+router.use(express.static(`${process.cwd()}/game/assets`));
 
 router.get('/', (req, res) => {
     res.sendFile(`${process.cwd()}/game/game.html`);

@@ -1,7 +1,5 @@
 const pwShowHide = document.querySelectorAll(".showHidePw"),
       pwFields = document.querySelectorAll(".password")
-
-    //   js code to show/hide password and change icon
     pwShowHide.forEach(eyeIcon =>{
         eyeIcon.addEventListener("click", ()=>{
             pwFields.forEach(pwField =>{

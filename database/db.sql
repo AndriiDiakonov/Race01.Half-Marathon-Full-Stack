@@ -7,9 +7,23 @@ CREATE TABLE IF NOT EXISTS race01.users (
     name VARCHAR(50) NOT NULL,
     email VARCHAR(40) UNIQUE NOT NULL
 );
+CREATE TABLE IF NOT EXISTS race01.cardTanos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    health INT NOT NULL,
+    attack INT NOT NULL,
+    cost INT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS race01.cardIronMan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    health INT NOT NULL,
+    attack INT NOT NULL,
+    cost INT NOT NULL
+);
 
 ALTER TABLE
     race01.users
 ADD COLUMN
     permission ENUM('user', 'admin') NOT NULL DEFAULT 'user';
-    
+

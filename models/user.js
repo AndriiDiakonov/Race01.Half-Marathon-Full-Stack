@@ -24,3 +24,4 @@ module.exports = class User extends Model {
         }
     }
 }
+
