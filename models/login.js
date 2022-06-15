@@ -57,7 +57,7 @@ async function login(userData, session) {
         user.email = userModel.email;
         user.permission = userModel.permission;
         session.user = user;
-        res.redirect = `/profile`;
+        res.redirect = `/start`;
     }
 
     return res;

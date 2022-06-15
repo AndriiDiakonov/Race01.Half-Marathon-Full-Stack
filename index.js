@@ -1,12 +1,15 @@
 "use strict";
+
 const express = require('express');
 const session = require('express-session');
-
+const http = require('http');
+const start = require('./controllers/controller-start')
+const game = require('./controllers/controller-game')
 const login = require('./controllers/controller-login');
-const profile = require('./controllers/controller-profile');
 const register = require('./controllers/controller-register');
-
 const app = express();
+const server = http.createServer(app);
+
 const PORT = process.env.PORT ?? 8080
 
 app.set("trust proxy", 1); 
@@ -18,7 +21,6 @@ app.use(session({
         maxAge: 24 * 60 * 60 * 1000,
     },
 }));
-
 app.use(express.static(__dirname + '/controllers/public'));
 app.use(express.json());
 
@@ -35,7 +37,12 @@ app.get('/', (req, res) => {
 });
 
 app.use('/login', login);
-app.use('/profile', isLoggedIn, profile);
+
+app.use('/start', isLoggedIn, start);
+app.use('/game', isLoggedIn, game);
+//app.use('/profile', isLoggedIn, profile);
+
+
 app.use('/register', register);
 
 app.get('*', (req, res) => {
